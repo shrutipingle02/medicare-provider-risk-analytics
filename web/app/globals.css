@@ -170,14 +170,46 @@ body {
   html {
     @apply font-sans;
   }
-  /* Page and section titles take the display serif. Set here rather than on
-     each heading so the pages stay free of font classes.
 
-     Tracking is reset because the headings carry `tracking-tight`, which was
-     tuned for Geist. A serif already has narrower sidebearings, so tightening
-     it again crowds the letterforms. */
-  h1, h2 {
+  /* ---------------------------------------------------------------------
+     Type scale
+
+     Seven steps and nothing between them. Sizes live here rather than as a
+     class on every heading, so a page cannot quietly invent an eighth step
+     and the whole scale can be retuned in one place.
+
+     Headings take the display serif. Tracking is not tightened: the sans it
+     replaced was set at `tracking-tight`, and a serif already carries
+     narrower sidebearings, so tightening again crowds the letterforms.
+     --------------------------------------------------------------------- */
+  h1, h2, h3 {
     font-family: var(--font-heading);
     letter-spacing: normal;
+    text-wrap: balance;
+  }
+
+  h1 {
+    font-size: clamp(2.125rem, 4.2vw, 2.75rem); /* 34 -> 44 */
+    line-height: 1.06;
+    font-weight: 500;
+  }
+
+  h2 {
+    font-size: 1.75rem;                          /* 28 */
+    line-height: 1.18;
+    font-weight: 500;
+  }
+
+  h3 {
+    font-size: 1.1875rem;                        /* 19 */
+    line-height: 1.32;
+    font-weight: 500;
+  }
+
+  /* Body copy runs looser than the default. A dense measure at 1.5 is the
+     clearest tell of a dashboard; 1.7 is the difference between scanning and
+     reading. */
+  body {
+    line-height: 1.7;
   }
 }

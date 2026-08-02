@@ -46,9 +46,9 @@ export default async function Atlas() {
   });
 
   return (
-    <div className="mx-auto w-full max-w-5xl px-5 py-10 space-y-10">
+    <div className="mx-auto w-full max-w-5xl px-5 py-20 space-y-28">
       <header>
-        <h1 className="text-3xl font-semibold tracking-tight">
+        <h1>
           Where the worklist concentrates
         </h1>
         <p className="mt-3 max-w-2xl text-[var(--ink-secondary)]">
@@ -64,8 +64,8 @@ export default async function Atlas() {
       <Map stats={stats} bins={bins} year={year} />
 
       {offMap.length > 0 && (
-        <section className="rounded-xl border border-[var(--hairline)] bg-[var(--surface)] p-4">
-          <h2 className="font-medium">Not on the map</h2>
+        <section className="rounded-xl border border-[var(--hairline)] bg-[var(--surface)] p-7">
+          <h2 className="text-base">Not on the map</h2>
           <p className="mt-2 text-sm text-[var(--ink-secondary)]">
             The projection used here insets Alaska and Hawaii but has no place
             for the territories. They are not omitted from the analysis, and one
@@ -85,7 +85,7 @@ export default async function Atlas() {
       )}
 
       <section>
-        <h2 className="text-xl font-semibold tracking-tight">Every state</h2>
+        <h2>Every state</h2>
         <p className="mt-2 text-sm text-[var(--ink-secondary)]">
           {summary.states_note}
         </p>

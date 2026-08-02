@@ -54,7 +54,7 @@ export default async function Home() {
           <p className="mt-6 text-6xl font-semibold leading-none tracking-tighter sm:text-8xl lg:text-9xl">
             <CountUp to={data.providers} />
           </p>
-          <h1 className="mt-6 max-w-3xl text-2xl font-medium leading-snug sm:text-4xl">
+          <h1 className="mt-7 max-w-3xl">
             providers scored.{" "}
             <span className="text-[var(--accent)]">
               {num(scores.worklist_size)}
@@ -63,9 +63,9 @@ export default async function Home() {
           </h1>
           <div
             aria-hidden
-            className="mt-8 h-px w-24 bg-[var(--accent)]"
+            className="mt-10 h-px w-24 bg-[var(--accent)]"
           />
-          <p className="mt-8 max-w-xl leading-relaxed text-[var(--ink-secondary)]">
+          <p className="mt-10 max-w-xl text-[var(--ink-secondary)]">
             Each point above is a provider. Almost all of them look ordinary for
             the work they do. Every flag below states its reason against that
             provider&apos;s specialty peers, and nobody is named.
@@ -73,13 +73,13 @@ export default async function Home() {
         </div>
       </section>
 
-      <div className="mx-auto w-full max-w-5xl px-5 pb-10">
+      <div className="mx-auto w-full max-w-5xl px-5 pb-20">
       {/* KPI row: the figures that give the hero number its meaning. */}
-      <dl className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+      <dl className="grid grid-cols-2 gap-4 sm:grid-cols-4">
         {stats.map((s) => (
           <div
             key={s.label}
-            className="rounded-xl border border-[var(--hairline)] bg-[var(--surface)] p-4"
+            className="rounded-xl border border-[var(--hairline)] bg-[var(--surface)] p-7"
           >
             <dt className="sr-only">{s.label}</dt>
             <dd className="text-2xl font-semibold">{s.value}</dd>
@@ -90,7 +90,7 @@ export default async function Home() {
         ))}
       </dl>
 
-      <p className="mt-4 text-sm text-[var(--ink-secondary)]">
+      <p className="mt-6 max-w-2xl text-sm text-[var(--ink-secondary)]">
         {scores.ranking_note}{" "}
         <Link href="/how-it-works" className="underline underline-offset-2">
           Why that matters
@@ -102,10 +102,10 @@ export default async function Home() {
         .
       </p>
 
-      <hr className="my-8 border-[var(--hairline)]" />
+      <hr className="my-14 border-[var(--hairline)]" />
 
       {/* The disclaimer sits against the list it qualifies, not one page away. */}
-      <p className="mb-8 rounded-xl border border-[var(--hairline)] bg-[var(--surface)] p-4 text-sm">
+      <p className="mb-10 rounded-xl border border-[var(--hairline)] bg-[var(--surface)] p-7 text-sm">
         <strong className="font-medium">
           No provider on this list is accused of anything.
         </strong>{" "}

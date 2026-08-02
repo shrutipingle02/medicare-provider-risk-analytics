@@ -35,9 +35,9 @@ export default async function Method() {
   ];
 
   return (
-    <div className="mx-auto w-full max-w-5xl px-5 py-10 space-y-12">
+    <div className="mx-auto w-full max-w-5xl px-5 py-20 space-y-32">
       <header>
-        <h1 className="text-3xl font-semibold tracking-tight">
+        <h1>
           Method &amp; limits
         </h1>
         <p className="mt-3 max-w-2xl text-[var(--ink-secondary)]">
@@ -47,8 +47,8 @@ export default async function Method() {
       </header>
 
       <section>
-        <h2 className="text-xl font-semibold tracking-tight">The data</h2>
-        <dl className="mt-4 grid gap-3 sm:grid-cols-3">
+        <h2>The data</h2>
+        <dl className="mt-7 grid gap-4 sm:grid-cols-3">
           {[
             { k: "Provider-years", v: num(data.provider_years) },
             { k: "Providers", v: num(data.providers) },
@@ -65,7 +65,7 @@ export default async function Method() {
           ].map((s) => (
             <div
               key={s.k}
-              className="rounded-xl border border-[var(--hairline)] bg-[var(--surface)] p-4"
+              className="rounded-xl border border-[var(--hairline)] bg-[var(--surface)] p-7"
             >
               <dt className="text-xs text-[var(--ink-secondary)]">{s.k}</dt>
               <dd className="mt-1 text-lg font-semibold tnum">{s.v}</dd>
@@ -82,7 +82,7 @@ export default async function Method() {
       </section>
 
       <section>
-        <h2 className="text-xl font-semibold tracking-tight">
+        <h2>
           How well it works
         </h2>
         <p className="mt-2 max-w-2xl text-sm text-[var(--ink-secondary)]">
@@ -109,14 +109,14 @@ export default async function Method() {
       </section>
 
       <section>
-        <h2 className="text-xl font-semibold tracking-tight">
+        <h2>
           What this cannot tell you
         </h2>
-        <ul className="mt-4 space-y-3">
+        <ul className="mt-7 space-y-4">
           {caveats.map((c) => (
             <li
               key={c}
-              className="rounded-xl border border-[var(--hairline)] bg-[var(--surface)] p-4 text-sm text-[var(--ink-secondary)]"
+              className="rounded-xl border border-[var(--hairline)] bg-[var(--surface)] p-7 text-sm text-[var(--ink-secondary)]"
             >
               {c}
             </li>
@@ -125,7 +125,7 @@ export default async function Method() {
       </section>
 
       <section>
-        <h2 className="text-xl font-semibold tracking-tight">
+        <h2>
           Two findings worth stating plainly
         </h2>
         <div className="mt-4 space-y-4 max-w-2xl text-sm text-[var(--ink-secondary)]">

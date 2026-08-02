@@ -16,9 +16,9 @@ export default async function HowItWorks() {
   const flagged = model.bias_audit.filter((r) => r.flagged);
 
   return (
-    <div className="mx-auto w-full max-w-5xl px-5 py-10 space-y-12">
+    <div className="mx-auto w-full max-w-5xl px-5 py-20 space-y-32">
       <header>
-        <h1 className="text-3xl font-semibold tracking-tight">How it works</h1>
+        <h1>How it works</h1>
         <p className="mt-3 max-w-2xl text-[var(--ink-secondary)]">
           Gradient-boosted trees over {model.n_features} features, trained to
           separate providers who were later excluded by the OIG from those who
@@ -28,7 +28,7 @@ export default async function HowItWorks() {
       </header>
 
       <section>
-        <h2 className="text-xl font-semibold tracking-tight">
+        <h2>
           What the model actually uses
         </h2>
         <p className="mt-2 max-w-2xl text-sm text-[var(--ink-secondary)]">
@@ -90,7 +90,7 @@ export default async function HowItWorks() {
       </section>
 
       <section>
-        <h2 className="text-xl font-semibold tracking-tight">
+        <h2>
           The bias audit
         </h2>
         <p className="mt-2 max-w-2xl text-sm text-[var(--ink-secondary)]">
@@ -100,11 +100,11 @@ export default async function HowItWorks() {
           direction. Both together are what makes a feature a problem.
         </p>
 
-        <ul className="mt-5 space-y-3">
+        <ul className="mt-7 space-y-4">
           {model.bias_audit.map((row) => (
             <li
               key={row.feature}
-              className="rounded-xl border border-[var(--hairline)] bg-[var(--surface)] p-4"
+              className="rounded-xl border border-[var(--hairline)] bg-[var(--surface)] p-7"
             >
               <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
                 {/* Status never rides on color alone: icon + label + color. */}
@@ -142,7 +142,7 @@ export default async function HowItWorks() {
       </section>
 
       <section>
-        <h2 className="text-xl font-semibold tracking-tight">
+        <h2>
           What the audit changed
         </h2>
         <div className="mt-4 space-y-4 text-sm text-[var(--ink-secondary)] max-w-2xl">
