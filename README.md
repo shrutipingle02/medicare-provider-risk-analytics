@@ -241,6 +241,10 @@ TypeScript, Tailwind CSS, D3-geo, deployed on Vercel. No model binaries are
 committed — the split, the undersample draw and the model are all seeded, so a
 seed reproduces a model exactly.
 
+<!-- ACKNOWLEDGMENTS — held back until the cited papers have been read, then
+     uncomment this whole block. Nothing here is wrong; it is unpublished
+     rather than unfinished.
+
 ## Acknowledgments
 
 **Data.** The [Centers for Medicare & Medicaid Services](https://data.cms.gov/provider-summary-by-type-of-service/medicare-physician-other-practitioners)
@@ -266,6 +270,8 @@ Atlantic University:
   per-provider SHAP explanations.
 
 **Tools.** scikit-learn, XGBoost and SHAP, and the maintainers of each.
+
+-->
 
 ---
 
