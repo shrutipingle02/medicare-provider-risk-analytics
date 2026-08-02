@@ -1,5 +1,11 @@
 # Medicare Provider Risk Analytics
 
+<!-- Everything below is held back deliberately. Uncomment to restore the
+     full project document: framing, data, pipeline, features, results,
+     protocol, limitations, privacy, repo contents, stack, acknowledgments.
+     The acknowledgments block near the end was separately marked as
+     pending until the cited papers have been read.
+
 An end-to-end pipeline that turns six years of real Medicare billing data into a
 **ranked, explained worklist of providers whose billing is unusual for their
 specialty**, published as a live public site.
@@ -241,9 +247,6 @@ TypeScript, Tailwind CSS, D3-geo, deployed on Vercel. No model binaries are
 committed — the split, the undersample draw and the model are all seeded, so a
 seed reproduces a model exactly.
 
-<!-- ACKNOWLEDGMENTS — held back until the cited papers have been read, then
-     uncomment this whole block. Nothing here is wrong; it is unpublished
-     rather than unfinished.
 
 ## Acknowledgments
 
@@ -271,9 +274,9 @@ Atlantic University:
 
 **Tools.** scikit-learn, XGBoost and SHAP, and the maintainers of each.
 
--->
 
 ---
 
 See [`PROJECT.md`](PROJECT.md) for the full decision log, including the choices
 that were reversed and why.
+-->
