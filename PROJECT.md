@@ -4,7 +4,10 @@
 **Goal:** Rank Medicare providers by fraud risk, explain every flag, and publish
 the result as a live public site.
 
-**Status:** steps 1-6 of 7 complete. Last worked on 2026-08-01.
+**Status:** shipped 2026-08-01. All eight steps complete, site live at
+`medicare-provider-risk-analytics.vercel.app`. Deploys are CLI-only for now -
+the GitHub repo is not connected to Vercel, and connecting it needs Root
+Directory set to `web`.
 
 > This file is the single source of truth. Decisions get recorded here with the
 > reason behind them, so nothing has to be re-derived or re-argued later.
@@ -259,7 +262,7 @@ fraudsters.
 | 5 | `train_model.py` | `models/metrics.json` | done |
 | 6 | `explain_shap.py` | `models/shap_explanations.json` | done |
 | 7 | `score_providers.py` | `data/site/`, 3 JSON files | done |
-| 8 | `web/` | 4-page site, `web/` | built, not yet deployed |
+| 8 | `web/` | 4-page site, `web/` | done, deployed |
 
 Two supporting scripts sit outside the seven. `baseline.py` ranks by single raw
 columns to establish a floor. `temporal_check.py` measures whether the model
