@@ -2,10 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
 import { getSummary } from "@/lib/data";
-import { Geist } from "next/font/google";
+import { Geist, Newsreader } from "next/font/google";
 import { cn } from "@/lib/utils";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+
+// Headings only. Numbers and tables stay in Geist, where legibility beats
+// character.
+const display = Newsreader({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  variable: '--font-display',
+});
 
 export const metadata: Metadata = {
   title: "Medicare Provider Risk Analytics",
@@ -26,7 +34,7 @@ export default async function RootLayout({
   const summary = await getSummary();
 
   return (
-    <html lang="en" className={cn("h-full antialiased", "font-sans", geist.variable)}>
+    <html lang="en" className={cn("h-full antialiased", "font-sans", geist.variable, display.variable)}>
       <body className="min-h-full flex flex-col">
         <header className="border-b border-[var(--hairline)] bg-[var(--surface)]">
           <div className="mx-auto w-full max-w-5xl px-5 py-4 flex flex-wrap items-center gap-x-6 gap-y-3">
