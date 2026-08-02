@@ -1,0 +1,79 @@
+{
+  "seeds": [
+    42,
+    1,
+    7,
+    13,
+    99,
+    2,
+    5,
+    11,
+    23,
+    77
+  ],
+  "baselines": {
+    "tot_medicare_payment": {
+      "roc_auc": 0.5962291901215309,
+      "recall_at_1pct": 0.04707680740743562,
+      "recall_at_5pct": 0.176682936727579,
+      "recall_at_10pct": 0.2549254503943832,
+      "recall_at_1pct_std": 0.016554860725738904
+    },
+    "tot_services": {
+      "roc_auc": 0.6127484166493705,
+      "recall_at_1pct": 0.04329900734221588,
+      "recall_at_5pct": 0.14623972238241917,
+      "recall_at_10pct": 0.23222740705542275,
+      "recall_at_1pct_std": 0.017082909069432987
+    },
+    "pay_per_bene": {
+      "roc_auc": 0.6686636025296073,
+      "recall_at_1pct": 0.0562990208996494,
+      "recall_at_5pct": 0.17632601929748176,
+      "recall_at_10pct": 0.2983369256008238,
+      "recall_at_1pct_std": 0.019411387113600295
+    },
+    "services_per_bene": {
+      "roc_auc": 0.6909488388051721,
+      "recall_at_1pct": 0.04085609747204463,
+      "recall_at_5pct": 0.14848706874921647,
+      "recall_at_10pct": 0.24686635505277071,
+      "recall_at_1pct_std": 0.01672832562790946
+    },
+    "tot_medicare_payment_pct": {
+      "roc_auc": 0.5777748172453075,
+      "recall_at_1pct": 0.09357333930262486,
+      "recall_at_5pct": 0.1812209697375296,
+      "recall_at_10pct": 0.25487985094840593,
+      "recall_at_1pct_std": 0.023052399509302126
+    },
+    "tot_services_pct": {
+      "roc_auc": 0.588558331589711,
+      "recall_at_1pct": 0.06463891326805968,
+      "recall_at_5pct": 0.17670175054986742,
+      "recall_at_10pct": 0.23763156020015946,
+      "recall_at_1pct_std": 0.0173150350259615
+    },
+    "pay_per_bene_pct": {
+      "roc_auc": 0.6390969928471186,
+      "recall_at_1pct": 0.08937352570677484,
+      "recall_at_5pct": 0.24280304547736095,
+      "recall_at_10pct": 0.3309244712105638,
+      "recall_at_1pct_std": 0.02610444456662244
+    },
+    "services_per_bene_pct": {
+      "roc_auc": 0.6593802405883418,
+      "recall_at_1pct": 0.08021572238171801,
+      "recall_at_5pct": 0.2284346300722162,
+      "recall_at_10pct": 0.32590390440045514,
+      "recall_at_1pct_std": 0.02170844459855654
+    }
+  },
+  "model": {
+    "model": "XGBoost",
+    "roc_auc": 0.8204591495949316,
+    "recall_at_1pct": 0.17472942836116084,
+    "recall_at_5pct": 0.39250912337124433,
+    "recall_at_10pct": 0.5282256887152073
+  }
+}

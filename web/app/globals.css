@@ -1,0 +1,173 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* ---------------------------------------------------------------------------
+   SIGNAL IN THE NOISE
+
+   The site commits to one look rather than shipping a light and a dark set.
+   The concept is a near-black field of 1.67 million quiet points with a few
+   hundred lit: on a white surface there is no "lit", so a light mode would not
+   be the same design rendered differently, it would be a different design.
+
+   `color-scheme: dark` is declared so form controls, scrollbars and the
+   browser's own chrome follow, rather than flashing white.
+   --------------------------------------------------------------------------- */
+:root {
+  color-scheme: dark;
+
+  --plane: #0a0a0c;          /* the field */
+  --surface: #111318;        /* cards, panels, chart surfaces */
+  --surface-raised: #171a21; /* hover, popovers */
+
+  --ink-primary: #f2f5fa;    /* 18.1:1 on the plane */
+  --ink-secondary: #9aa8bd;  /* 8.2:1  — body copy */
+  --ink-muted: #5d6b82;      /* 3.7:1  — metadata only, never body text */
+
+  --gridline: #1e222b;
+  --baseline: #2a3040;
+  --hairline: rgba(255, 255, 255, 0.08);
+
+  --series-1: #5598e7;       /* the measure */
+  --series-track: #1e2530;
+  --accent: #8fd0ff;         /* "lit": the flagged few */
+
+  /* Choropleth ramp, low -> high. Runs dark->light because on this surface it
+     is the lightest step that stands out. Re-spaced after the validator caught
+     two adjacent steps only 0.047 apart in lightness — two map bins that would
+     have looked identical. Now passes: monotone L, all gaps >= 0.06, low end
+     2.80:1 against the chart surface. */
+  --seq-1: #1c5cab;
+  --seq-2: #2a78d6;
+  --seq-3: #5598e7;
+  --seq-4: #86b6ef;
+  --seq-5: #cde2fb;
+  --seq-none: #1e222b;
+
+  /* Status is reserved and never reused as a series colour. Always shipped
+     with an icon and a label, never carried by hue alone. */
+  --status-good: #0ca30c;
+  --status-warning: #fab219;
+  --status-critical: #d03b3b;
+
+  /* shadcn's semantic tokens, aliased onto the palette above rather than kept
+     as a parallel greyscale set. One source of truth. */
+  --background: var(--plane);
+  --foreground: var(--ink-primary);
+  --card: var(--surface);
+  --card-foreground: var(--ink-primary);
+  --popover: var(--surface-raised);
+  --popover-foreground: var(--ink-primary);
+  --primary: var(--series-1);
+  --primary-foreground: #06070a;
+  --secondary: var(--gridline);
+  --secondary-foreground: var(--ink-primary);
+  --muted: var(--gridline);
+  --muted-foreground: var(--ink-secondary);
+  --accent-bg: var(--gridline);
+  --accent-foreground: var(--ink-primary);
+  --destructive: var(--status-critical);
+  --border: var(--hairline);
+  --input: var(--hairline);
+  --ring: var(--series-1);
+  --chart-1: var(--seq-1);
+  --chart-2: var(--seq-2);
+  --chart-3: var(--seq-3);
+  --chart-4: var(--seq-4);
+  --chart-5: var(--seq-5);
+  --radius: 0.625rem;
+  --sidebar: var(--surface);
+  --sidebar-foreground: var(--ink-primary);
+  --sidebar-primary: var(--series-1);
+  --sidebar-primary-foreground: #06070a;
+  --sidebar-accent: var(--gridline);
+  --sidebar-accent-foreground: var(--ink-primary);
+  --sidebar-border: var(--hairline);
+  --sidebar-ring: var(--series-1);
+}
+
+@theme inline {
+  --color-surface: var(--surface);
+  --color-plane: var(--plane);
+  --color-ink: var(--ink-primary);
+  --color-ink-secondary: var(--ink-secondary);
+  --color-ink-muted: var(--ink-muted);
+  --color-gridline: var(--gridline);
+  --color-baseline: var(--baseline);
+  --color-series: var(--series-1);
+  --color-series-track: var(--series-track);
+  --color-seq-1: var(--seq-1);
+  --color-seq-2: var(--seq-2);
+  --color-seq-3: var(--seq-3);
+  --color-seq-4: var(--seq-4);
+  --color-seq-5: var(--seq-5);
+  --color-good: var(--status-good);
+  --color-warning: var(--status-warning);
+  --color-critical: var(--status-critical);
+  --font-sans: "Geist", "Geist Fallback", system-ui, -apple-system, sans-serif;
+  --font-heading: "Geist", "Geist Fallback", system-ui, -apple-system, sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent-bg);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+body {
+  background: var(--plane);
+  color: var(--ink-primary);
+  /* No font-family here: `html` picks up --font-sans in the base layer, and
+     repeating it on body would override that with the fallback stack. */
+}
+
+/* Reserved for columns that must align vertically. Standalone numbers keep
+   proportional figures. */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}

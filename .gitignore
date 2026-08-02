@@ -1,0 +1,25 @@
+# Data: never committed. All of it is regenerable by running src/download_data.py
+# and the pipeline steps that follow.
+data/raw/*
+data/interim/*
+data/processed/*
+!data/**/.gitkeep
+
+# Trained model binaries are regenerable; the metrics summaries are results and
+# are kept as a record.
+models/*.joblib
+models/*.pkl
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,1090 @@
+{
+  "seed": 42,
+  "model": "XGBoost",
+  "n_features": 46,
+  "sample_rows": 40000,
+  "note": "Explanations come from a single seeded fit. Reported metrics still come from the 10-seed protocol in models/metrics.json.",
+  "global_importance": [
+    {
+      "rank": 1,
+      "feature": "services_per_bene",
+      "label": "services per patient",
+      "mean_abs_shap": 0.44837743043899536,
+      "share": 0.07777483761310577
+    },
+    {
+      "rank": 2,
+      "feature": "charge_to_payment",
+      "label": "charge-to-payment ratio",
+      "mean_abs_shap": 0.35588935017585754,
+      "share": 0.06173200532793999
+    },
+    {
+      "rank": 3,
+      "feature": "bene_avg_age",
+      "label": "average patient age",
+      "mean_abs_shap": 0.3512973487377167,
+      "share": 0.06093548238277435
+    },
+    {
+      "rank": 4,
+      "feature": "bene_avg_risk_score_pct",
+      "label": "average patient risk score (peer percentile)",
+      "mean_abs_shap": 0.2518182396888733,
+      "share": 0.043679993599653244
+    },
+    {
+      "rank": 5,
+      "feature": "tot_hcpcs_codes",
+      "label": "distinct procedure codes billed",
+      "mean_abs_shap": 0.24456283450126648,
+      "share": 0.042421482503414154
+    },
+    {
+      "rank": 6,
+      "feature": "tot_hcpcs_codes_pmr",
+      "label": "distinct procedure codes billed (vs peer median)",
+      "mean_abs_shap": 0.23192360997200012,
+      "share": 0.04022910073399544
+    },
+    {
+      "rank": 7,
+      "feature": "tot_hcpcs_codes_z",
+      "label": "distinct procedure codes billed (vs peers)",
+      "mean_abs_shap": 0.2147233933210373,
+      "share": 0.037245579063892365
+    },
+    {
+      "rank": 8,
+      "feature": "tot_medicare_allowed",
+      "label": "Medicare allowed amount",
+      "mean_abs_shap": 0.213753804564476,
+      "share": 0.037077397108078
+    },
+    {
+      "rank": 9,
+      "feature": "services_per_bene_z",
+      "label": "services per patient (vs peers)",
+      "mean_abs_shap": 0.1685233861207962,
+      "share": 0.029231799766421318
+    },
+    {
+      "rank": 10,
+      "feature": "bene_avg_risk_score_pmr",
+      "label": "average patient risk score (vs peer median)",
+      "mean_abs_shap": 0.16177807748317719,
+      "share": 0.028061769902706146
+    },
+    {
+      "rank": 11,
+      "feature": "pay_per_service",
+      "label": "payment per service",
+      "mean_abs_shap": 0.1544255018234253,
+      "share": 0.026786403730511665
+    },
+    {
+      "rank": 12,
+      "feature": "tot_medicare_payment_z",
+      "label": "Medicare payment (vs peers)",
+      "mean_abs_shap": 0.15164043009281158,
+      "share": 0.026303309947252274
+    },
+    {
+      "rank": 13,
+      "feature": "pay_per_bene_z",
+      "label": "payment per patient (vs peers)",
+      "mean_abs_shap": 0.15120571851730347,
+      "share": 0.026227904483675957
+    },
+    {
+      "rank": 14,
+      "feature": "tot_medicare_allowed_pct",
+      "label": "Medicare allowed amount (peer percentile)",
+      "mean_abs_shap": 0.13400505483150482,
+      "share": 0.023244304582476616
+    },
+    {
+      "rank": 15,
+      "feature": "pay_per_service_z",
+      "label": "payment per service (vs peers)",
+      "mean_abs_shap": 0.12696491181850433,
+      "share": 0.02202313207089901
+    },
+    {
+      "rank": 16,
+      "feature": "services_per_bene_pct",
+      "label": "services per patient (peer percentile)",
+      "mean_abs_shap": 0.12274669110774994,
+      "share": 0.021291447803378105
+    },
+    {
+      "rank": 17,
+      "feature": "charge_to_payment_z",
+      "label": "charge-to-payment ratio (vs peers)",
+      "mean_abs_shap": 0.12130674719810486,
+      "share": 0.02104167640209198
+    },
+    {
+      "rank": 18,
+      "feature": "tot_medicare_allowed_z",
+      "label": "Medicare allowed amount (vs peers)",
+      "mean_abs_shap": 0.10866429656744003,
+      "share": 0.018848737701773643
+    },
+    {
+      "rank": 19,
+      "feature": "pay_per_bene_pmr",
+      "label": "payment per patient (vs peer median)",
+      "mean_abs_shap": 0.10553160309791565,
+      "share": 0.018305344507098198
+    },
+    {
+      "rank": 20,
+      "feature": "ruca",
+      "label": "rural-urban location code",
+      "mean_abs_shap": 0.1025514304637909,
+      "share": 0.01778840832412243
+    },
+    {
+      "rank": 21,
+      "feature": "services_per_bene_pmr",
+      "label": "services per patient (vs peer median)",
+      "mean_abs_shap": 0.10094252228736877,
+      "share": 0.017509330064058304
+    },
+    {
+      "rank": 22,
+      "feature": "tot_medicare_payment_pmr",
+      "label": "Medicare payment (vs peer median)",
+      "mean_abs_shap": 0.0987718477845192,
+      "share": 0.01713280938565731
+    },
+    {
+      "rank": 23,
+      "feature": "tot_beneficiaries_pmr",
+      "label": "patients (vs peer median)",
+      "mean_abs_shap": 0.09751784056425095,
+      "share": 0.01691528968513012
+    },
+    {
+      "rank": 24,
+      "feature": "charge_to_payment_pmr",
+      "label": "charge-to-payment ratio (vs peer median)",
+      "mean_abs_shap": 0.09057023376226425,
+      "share": 0.015710169449448586
+    },
+    {
+      "rank": 25,
+      "feature": "tot_beneficiaries",
+      "label": "patients",
+      "mean_abs_shap": 0.08737833797931671,
+      "share": 0.015156508423388004
+    },
+    {
+      "rank": 26,
+      "feature": "tot_beneficiaries_z",
+      "label": "patients (vs peers)",
+      "mean_abs_shap": 0.08731857687234879,
+      "share": 0.01514614187180996
+    },
+    {
+      "rank": 27,
+      "feature": "pay_per_service_pmr",
+      "label": "payment per service (vs peer median)",
+      "mean_abs_shap": 0.08377142995595932,
+      "share": 0.014530859887599945
+    },
+    {
+      "rank": 28,
+      "feature": "tot_services",
+      "label": "services",
+      "mean_abs_shap": 0.08069323003292084,
+      "share": 0.013996919617056847
+    },
+    {
+      "rank": 29,
+      "feature": "pay_per_bene",
+      "label": "payment per patient",
+      "mean_abs_shap": 0.08068042248487473,
+      "share": 0.013994698412716389
+    },
+    {
+      "rank": 30,
+      "feature": "charge_to_payment_pct",
+      "label": "charge-to-payment ratio (peer percentile)",
+      "mean_abs_shap": 0.07822545617818832,
+      "share": 0.013568864203989506
+    },
+    {
+      "rank": 31,
+      "feature": "tot_beneficiaries_pct",
+      "label": "patients (peer percentile)",
+      "mean_abs_shap": 0.07572071999311447,
+      "share": 0.013134396634995937
+    },
+    {
+      "rank": 32,
+      "feature": "tot_submitted_charge",
+      "label": "submitted charges",
+      "mean_abs_shap": 0.07432043552398682,
+      "share": 0.012891504913568497
+    },
+    {
+      "rank": 33,
+      "feature": "tot_medicare_allowed_pmr",
+      "label": "Medicare allowed amount (vs peer median)",
+      "mean_abs_shap": 0.07403009384870529,
+      "share": 0.01284114271402359
+    },
+    {
+      "rank": 34,
+      "feature": "tot_services_z",
+      "label": "services (vs peers)",
+      "mean_abs_shap": 0.07310544699430466,
+      "share": 0.012680754996836185
+    },
+    {
+      "rank": 35,
+      "feature": "pay_per_bene_pct",
+      "label": "payment per patient (peer percentile)",
+      "mean_abs_shap": 0.07048449665307999,
+      "share": 0.012226128950715065
+    },
+    {
+      "rank": 36,
+      "feature": "tot_submitted_charge_z",
+      "label": "submitted charges (vs peers)",
+      "mean_abs_shap": 0.06939675658941269,
+      "share": 0.01203745137900114
+    },
+    {
+      "rank": 37,
+      "feature": "tot_medicare_payment_pct",
+      "label": "Medicare payment (peer percentile)",
+      "mean_abs_shap": 0.06588838994503021,
+      "share": 0.011428896337747574
+    },
+    {
+      "rank": 38,
+      "feature": "tot_services_pmr",
+      "label": "services (vs peer median)",
+      "mean_abs_shap": 0.06213480979204178,
+      "share": 0.010777805931866169
+    },
+    {
+      "rank": 39,
+      "feature": "tot_submitted_charge_pct",
+      "label": "submitted charges (peer percentile)",
+      "mean_abs_shap": 0.061406005173921585,
+      "share": 0.010651388205587864
+    },
+    {
+      "rank": 40,
+      "feature": "pay_per_service_pct",
+      "label": "payment per service (peer percentile)",
+      "mean_abs_shap": 0.05995088070631027,
+      "share": 0.010398984886705875
+    },
+    {
+      "rank": 41,
+      "feature": "bene_avg_risk_score_z",
+      "label": "average patient risk score (vs peers)",
+      "mean_abs_shap": 0.0595683790743351,
+      "share": 0.010332636535167694
+    },
+    {
+      "rank": 42,
+      "feature": "tot_medicare_payment",
+      "label": "Medicare payment",
+      "mean_abs_shap": 0.04804159328341484,
+      "share": 0.008333219215273857
+    },
+    {
+      "rank": 43,
+      "feature": "tot_hcpcs_codes_pct",
+      "label": "distinct procedure codes billed (peer percentile)",
+      "mean_abs_shap": 0.043447669595479965,
+      "share": 0.0075363642536103725
+    },
+    {
+      "rank": 44,
+      "feature": "tot_services_pct",
+      "label": "services (peer percentile)",
+      "mean_abs_shap": 0.042353224009275436,
+      "share": 0.007346523460000753
+    },
+    {
+      "rank": 45,
+      "feature": "tot_submitted_charge_pmr",
+      "label": "submitted charges (vs peer median)",
+      "mean_abs_shap": 0.04056472331285477,
+      "share": 0.007036292925477028
+    },
+    {
+      "rank": 46,
+      "feature": "tot_medicare_standardized",
+      "label": "standardized Medicare payment",
+      "mean_abs_shap": 0.03709633648395538,
+      "share": 0.006434672046452761
+    }
+  ],
+  "bias_audit": [
+    {
+      "feature": "bene_avg_age",
+      "label": "average patient age",
+      "concern": "patient age - flags a practice's patient mix, not its billing",
+      "rank": 3,
+      "share": 0.06093548238277435,
+      "value_vs_shap_spearman": -0.7844346377146317,
+      "mean_shap_top_decile": -0.3843638002872467,
+      "mean_shap_bottom_decile": 0.6103020310401917,
+      "flagged": true
+    },
+    {
+      "feature": "bene_avg_risk_score_pct",
+      "label": "average patient risk score (peer percentile)",
+      "concern": "CMS risk score - partly a coding-intensity measure already (expressed peer percentile)",
+      "rank": 4,
+      "share": 0.043679993599653244,
+      "value_vs_shap_spearman": 0.702001883777622,
+      "mean_shap_top_decile": 0.043286193162202835,
+      "mean_shap_bottom_decile": -0.7433568239212036,
+      "flagged": true
+    },
+    {
+      "feature": "bene_avg_risk_score_pmr",
+      "label": "average patient risk score (vs peer median)",
+      "concern": "CMS risk score - partly a coding-intensity measure already (expressed vs peer median)",
+      "rank": 10,
+      "share": 0.028061769902706146,
+      "value_vs_shap_spearman": 0.36309965979052866,
+      "mean_shap_top_decile": 0.24885381758213043,
+      "mean_shap_bottom_decile": -0.059071991592645645,
+      "flagged": true
+    },
+    {
+      "feature": "ruca",
+      "label": "rural-urban location code",
+      "concern": "rural-urban location - a geography proxy",
+      "rank": 20,
+      "share": 0.01778840832412243,
+      "value_vs_shap_spearman": 0.5113931509344274,
+      "mean_shap_top_decile": 0.2573806345462799,
+      "mean_shap_bottom_decile": -0.07265499234199524,
+      "flagged": false
+    },
+    {
+      "feature": "bene_avg_risk_score_z",
+      "label": "average patient risk score (vs peers)",
+      "concern": "CMS risk score - partly a coding-intensity measure already (expressed vs peers)",
+      "rank": 41,
+      "share": 0.010332636535167694,
+      "value_vs_shap_spearman": -0.27828821119788755,
+      "mean_shap_top_decile": -0.057650063186883926,
+      "mean_shap_bottom_decile": -0.010708396323025227,
+      "flagged": false
+    }
+  ],
+  "worklist_sample": [
+    {
+      "rank": 1,
+      "score": 0.9707156419754028,
+      "trigger_year": 2019,
+      "specialty": "Family Practice",
+      "state": "MI",
+      "known_fraud": false,
+      "reasons": [
+        "high services per patient (82nd percentile of its peer group)",
+        "high Medicare allowed amount (82nd percentile of its peer group)",
+        "unusually high payment per patient (95th percentile of its peer group)",
+        "low charge-to-payment ratio (8th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 2,
+      "score": 0.9664889574050903,
+      "trigger_year": 2020,
+      "specialty": "Family Practice",
+      "state": "PA",
+      "known_fraud": false,
+      "reasons": [
+        "above typical services per patient (71st percentile of its peer group)",
+        "above typical Medicare allowed amount (76th percentile of its peer group)",
+        "unusually low charge-to-payment ratio (5th percentile of its peer group)",
+        "above typical payment per service (73rd percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 3,
+      "score": 0.9507765173912048,
+      "trigger_year": 2019,
+      "specialty": "Family Practice",
+      "state": "OK",
+      "known_fraud": false,
+      "reasons": [
+        "high services per patient (94th percentile of its peer group)",
+        "unusually high Medicare allowed amount (100th percentile of its peer group)",
+        "unusually high payment per patient (97th percentile of its peer group)",
+        "unusually high distinct procedure codes billed (100th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 4,
+      "score": 0.9488679766654968,
+      "trigger_year": 2020,
+      "specialty": "Anesthesiology",
+      "state": "IL",
+      "known_fraud": false,
+      "reasons": [
+        "low payment per service (6th percentile of its peer group)",
+        "unusually high Medicare allowed amount (96th percentile of its peer group)",
+        "unusually low charge-to-payment ratio (2nd percentile of its peer group)",
+        "low distinct procedure codes billed (12th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 5,
+      "score": 0.948171854019165,
+      "trigger_year": 2021,
+      "specialty": "Family Practice",
+      "state": "PA",
+      "known_fraud": false,
+      "reasons": [
+        "unusually high services per patient (99th percentile of its peer group)",
+        "low payment per service (14th percentile of its peer group)",
+        "unusually high payment per patient (99th percentile of its peer group)",
+        "below typical charge-to-payment ratio (31st percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 6,
+      "score": 0.9448755383491516,
+      "trigger_year": 2024,
+      "specialty": "Anesthesiology",
+      "state": "GA",
+      "known_fraud": false,
+      "reasons": [
+        "unusually low payment per service (0th percentile of its peer group)",
+        "low distinct procedure codes billed (15th percentile of its peer group)",
+        "unusually high services per patient (100th percentile of its peer group)",
+        "unusually high Medicare allowed amount (97th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 7,
+      "score": 0.944494366645813,
+      "trigger_year": 2020,
+      "specialty": "Family Practice",
+      "state": "CA",
+      "known_fraud": false,
+      "reasons": [
+        "high services per patient (85th percentile of its peer group)",
+        "unusually high payment per patient (96th percentile of its peer group)",
+        "high Medicare allowed amount (87th percentile of its peer group)",
+        "low charge-to-payment ratio (11th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 8,
+      "score": 0.9436498880386353,
+      "trigger_year": 2021,
+      "specialty": "Anesthesiology",
+      "state": "GA",
+      "known_fraud": false,
+      "reasons": [
+        "low distinct procedure codes billed (8th percentile of its peer group)",
+        "unusually high Medicare allowed amount (96th percentile of its peer group)",
+        "unusually high payment per patient (97th percentile of its peer group)",
+        "unusually high services per patient (97th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 9,
+      "score": 0.9394130110740662,
+      "trigger_year": 2019,
+      "specialty": "Anesthesiology",
+      "state": "MI",
+      "known_fraud": false,
+      "reasons": [
+        "unusually high Medicare allowed amount (96th percentile of its peer group)",
+        "unusually low payment per service (0th percentile of its peer group)",
+        "unusually high services per patient (99th percentile of its peer group)",
+        "unusually low charge-to-payment ratio (3rd percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 10,
+      "score": 0.9379333853721619,
+      "trigger_year": 2022,
+      "specialty": "Clinical Laboratory",
+      "state": "FL",
+      "known_fraud": false,
+      "reasons": [
+        "unusually high services per patient (99th percentile of its peer group)",
+        "unusually high average patient risk score (98th percentile of its peer group)",
+        "unusually low payment per service (1st percentile of its peer group)",
+        "high patients (85th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 11,
+      "score": 0.9372467994689941,
+      "trigger_year": 2019,
+      "specialty": "Family Practice",
+      "state": "MI",
+      "known_fraud": false,
+      "reasons": [
+        "above typical services per patient (71st percentile of its peer group)",
+        "above typical Medicare allowed amount (73rd percentile of its peer group)",
+        "low charge-to-payment ratio (7th percentile of its peer group)",
+        "above typical payment per service (73rd percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 12,
+      "score": 0.935815155506134,
+      "trigger_year": 2020,
+      "specialty": "Internal Medicine",
+      "state": "NC",
+      "known_fraud": false,
+      "reasons": [
+        "high services per patient (94th percentile of its peer group)",
+        "unusually high payment per patient (97th percentile of its peer group)",
+        "low charge-to-payment ratio (9th percentile of its peer group)",
+        "low patients (16th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 13,
+      "score": 0.9344146251678467,
+      "trigger_year": 2022,
+      "specialty": "Psychologist, Clinical",
+      "state": "FL",
+      "known_fraud": false,
+      "reasons": [
+        "unusually low payment per service (0th percentile of its peer group)",
+        "unusually high Medicare allowed amount (95th percentile of its peer group)",
+        "high average patient risk score (83rd percentile of its peer group)",
+        "unusually high services per patient (99th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 14,
+      "score": 0.9340816140174866,
+      "trigger_year": 2019,
+      "specialty": "Family Practice",
+      "state": "NV",
+      "known_fraud": false,
+      "reasons": [
+        "unusually high payment per patient (99th percentile of its peer group)",
+        "high services per patient (93rd percentile of its peer group)",
+        "low charge-to-payment ratio (19th percentile of its peer group)",
+        "high average patient risk score (87th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 15,
+      "score": 0.9296536445617676,
+      "trigger_year": 2020,
+      "specialty": "Physical Medicine and Rehabilitation",
+      "state": "MD",
+      "known_fraud": false,
+      "reasons": [
+        "above typical Medicare allowed amount (73rd percentile of its peer group)",
+        "low charge-to-payment ratio (9th percentile of its peer group)",
+        "below typical average patient risk score (26th percentile of its peer group)",
+        "high payment per patient (86th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 16,
+      "score": 0.9282456636428833,
+      "trigger_year": 2020,
+      "specialty": "Rheumatology",
+      "state": "FL",
+      "known_fraud": false,
+      "reasons": [
+        "unusually high services per patient (99th percentile of its peer group)",
+        "unusually high payment per patient (99th percentile of its peer group)",
+        "above typical Medicare allowed amount (69th percentile of its peer group)",
+        "high average patient risk score (83rd percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 17,
+      "score": 0.9269362688064575,
+      "trigger_year": 2022,
+      "specialty": "Clinical Laboratory",
+      "state": "MA",
+      "known_fraud": true,
+      "reasons": [
+        "unusually low distinct procedure codes billed (2nd percentile of its peer group)",
+        "unusually high payment per patient (99th percentile of its peer group)",
+        "unusually high services per patient (98th percentile of its peer group)",
+        "high average patient risk score (89th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 18,
+      "score": 0.9268784523010254,
+      "trigger_year": 2020,
+      "specialty": "Family Practice",
+      "state": "CO",
+      "known_fraud": false,
+      "reasons": [
+        "unusually high payment per patient (97th percentile of its peer group)",
+        "high services per patient (86th percentile of its peer group)",
+        "below typical charge-to-payment ratio (32nd percentile of its peer group)",
+        "high payment per service (80th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 19,
+      "score": 0.9223477244377136,
+      "trigger_year": 2021,
+      "specialty": "Anesthesiology",
+      "state": "AL",
+      "known_fraud": false,
+      "reasons": [
+        "low distinct procedure codes billed (13th percentile of its peer group)",
+        "high Medicare allowed amount (92nd percentile of its peer group)",
+        "low payment per service (7th percentile of its peer group)",
+        "unusually high services per patient (97th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 20,
+      "score": 0.9208530187606812,
+      "trigger_year": 2021,
+      "specialty": "Family Practice",
+      "state": "OH",
+      "known_fraud": false,
+      "reasons": [
+        "unusually high payment per patient (99th percentile of its peer group)",
+        "unusually high services per patient (98th percentile of its peer group)",
+        "below typical charge-to-payment ratio (24th percentile of its peer group)",
+        "low patients (11th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 21,
+      "score": 0.9189068675041199,
+      "trigger_year": 2019,
+      "specialty": "Family Practice",
+      "state": "MI",
+      "known_fraud": false,
+      "reasons": [
+        "above typical services per patient (69th percentile of its peer group)",
+        "low charge-to-payment ratio (20th percentile of its peer group)",
+        "above typical average patient risk score (71st percentile of its peer group)",
+        "above typical payment per patient (72nd percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 22,
+      "score": 0.9182165861129761,
+      "trigger_year": 2022,
+      "specialty": "Hematology-Oncology",
+      "state": "CO",
+      "known_fraud": false,
+      "reasons": [
+        "high services per patient (88th percentile of its peer group)",
+        "unusually high payment per patient (97th percentile of its peer group)",
+        "unusually low patients (1st percentile of its peer group)",
+        "below typical payment per service (35th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 23,
+      "score": 0.9150719046592712,
+      "trigger_year": 2019,
+      "specialty": "Internal Medicine",
+      "state": "MI",
+      "known_fraud": false,
+      "reasons": [
+        "unusually high Medicare allowed amount (100th percentile of its peer group)",
+        "unusually high services per patient (97th percentile of its peer group)",
+        "unusually high distinct procedure codes billed (100th percentile of its peer group)",
+        "unusually high payment per patient (97th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 24,
+      "score": 0.912722110748291,
+      "trigger_year": 2019,
+      "specialty": "Internal Medicine",
+      "state": "MI",
+      "known_fraud": false,
+      "reasons": [
+        "low payment per service (10th percentile of its peer group)",
+        "unusually high services per patient (98th percentile of its peer group)",
+        "unusually high payment per patient (98th percentile of its peer group)",
+        "high Medicare allowed amount (89th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 25,
+      "score": 0.9115354418754578,
+      "trigger_year": 2020,
+      "specialty": "Internal Medicine",
+      "state": "NC",
+      "known_fraud": false,
+      "reasons": [
+        "high services per patient (92nd percentile of its peer group)",
+        "above typical distinct procedure codes billed (66th percentile of its peer group)",
+        "below typical charge-to-payment ratio (20th percentile of its peer group)",
+        "unusually high payment per patient (96th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 26,
+      "score": 0.9102925658226013,
+      "trigger_year": 2021,
+      "specialty": "Physician Assistant",
+      "state": "MI",
+      "known_fraud": false,
+      "reasons": [
+        "high Medicare allowed amount (95th percentile of its peer group)",
+        "unusually high payment per patient (97th percentile of its peer group)",
+        "high services per patient (91st percentile of its peer group)",
+        "low charge-to-payment ratio (7th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 27,
+      "score": 0.9061541557312012,
+      "trigger_year": 2020,
+      "specialty": "Interventional Pain Management",
+      "state": "MO",
+      "known_fraud": false,
+      "reasons": [
+        "high Medicare allowed amount (91st percentile of its peer group)",
+        "unusually low payment per service (4th percentile of its peer group)",
+        "unusually high services per patient (96th percentile of its peer group)",
+        "unusually high services (98th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 28,
+      "score": 0.9056524634361267,
+      "trigger_year": 2023,
+      "specialty": "Internal Medicine",
+      "state": "CA",
+      "known_fraud": false,
+      "reasons": [
+        "unusually high Medicare allowed amount (100th percentile of its peer group)",
+        "unusually high services per patient (99th percentile of its peer group)",
+        "unusually high distinct procedure codes billed (100th percentile of its peer group)",
+        "low charge-to-payment ratio (17th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 29,
+      "score": 0.9039324522018433,
+      "trigger_year": 2024,
+      "specialty": "Clinical Laboratory",
+      "state": "PR",
+      "known_fraud": false,
+      "reasons": [
+        "above typical distinct procedure codes billed (71st percentile of its peer group)",
+        "low patients (15th percentile of its peer group)",
+        "above typical services per patient (73rd percentile of its peer group)",
+        "low Medicare payment (19th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 30,
+      "score": 0.9034572839736938,
+      "trigger_year": 2019,
+      "specialty": "Family Practice",
+      "state": "OH",
+      "known_fraud": false,
+      "reasons": [
+        "unusually high services per patient (98th percentile of its peer group)",
+        "unusually high payment per patient (99th percentile of its peer group)",
+        "below typical distinct procedure codes billed (22nd percentile of its peer group)",
+        "below typical charge-to-payment ratio (33rd percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 31,
+      "score": 0.9030024409294128,
+      "trigger_year": 2021,
+      "specialty": "Internal Medicine",
+      "state": "PA",
+      "known_fraud": false,
+      "reasons": [
+        "unusually high services per patient (99th percentile of its peer group)",
+        "unusually high payment per patient (99th percentile of its peer group)",
+        "low charge-to-payment ratio (9th percentile of its peer group)",
+        "above typical average patient risk score (79th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 32,
+      "score": 0.9016003012657166,
+      "trigger_year": 2019,
+      "specialty": "Chiropractic",
+      "state": "MT",
+      "known_fraud": false,
+      "reasons": [
+        "unusually low Medicare payment (1st percentile of its peer group)",
+        "unusually high charge-to-payment ratio (98th percentile of its peer group)",
+        "unusually low payment per service (2nd percentile of its peer group)",
+        "unusually low services per patient (2nd percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 33,
+      "score": 0.9015949368476868,
+      "trigger_year": 2019,
+      "specialty": "Interventional Pain Management",
+      "state": "OH",
+      "known_fraud": false,
+      "reasons": [
+        "high services per patient (94th percentile of its peer group)",
+        "high Medicare allowed amount (95th percentile of its peer group)",
+        "unusually high payment per patient (99th percentile of its peer group)",
+        "high submitted charges (81st percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 34,
+      "score": 0.9012231826782227,
+      "trigger_year": 2023,
+      "specialty": "Psychologist, Clinical",
+      "state": "IN",
+      "known_fraud": false,
+      "reasons": [
+        "high average patient risk score (88th percentile of its peer group)",
+        "unusually high Medicare allowed amount (99th percentile of its peer group)",
+        "unusually low payment per service (3rd percentile of its peer group)",
+        "unusually high services (100th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 35,
+      "score": 0.8969182968139648,
+      "trigger_year": 2024,
+      "specialty": "Psychologist, Clinical",
+      "state": "CA",
+      "known_fraud": false,
+      "reasons": [
+        "unusually high average patient risk score (97th percentile of its peer group)",
+        "unusually high Medicare allowed amount (100th percentile of its peer group)",
+        "unusually high services per patient (97th percentile of its peer group)",
+        "unusually low payment per service (3rd percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 36,
+      "score": 0.8960185647010803,
+      "trigger_year": 2021,
+      "specialty": "Interventional Pain Management",
+      "state": "SC",
+      "known_fraud": false,
+      "reasons": [
+        "above typical services per patient (71st percentile of its peer group)",
+        "above typical Medicare allowed amount (75th percentile of its peer group)",
+        "low charge-to-payment ratio (13th percentile of its peer group)",
+        "above typical services (69th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 37,
+      "score": 0.89589923620224,
+      "trigger_year": 2019,
+      "specialty": "Family Practice",
+      "state": "PA",
+      "known_fraud": false,
+      "reasons": [
+        "below typical distinct procedure codes billed (33rd percentile of its peer group)",
+        "above typical services per patient (69th percentile of its peer group)",
+        "low charge-to-payment ratio (17th percentile of its peer group)",
+        "above typical Medicare allowed amount (72nd percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 38,
+      "score": 0.8946083188056946,
+      "trigger_year": 2019,
+      "specialty": "Anesthesiology",
+      "state": "GA",
+      "known_fraud": false,
+      "reasons": [
+        "unusually high Medicare allowed amount (97th percentile of its peer group)",
+        "low distinct procedure codes billed (12th percentile of its peer group)",
+        "unusually high payment per patient (99th percentile of its peer group)",
+        "unusually low charge-to-payment ratio (2nd percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 39,
+      "score": 0.8944616317749023,
+      "trigger_year": 2019,
+      "specialty": "Anesthesiology",
+      "state": "OH",
+      "known_fraud": false,
+      "reasons": [
+        "high Medicare allowed amount (93rd percentile of its peer group)",
+        "below typical distinct procedure codes billed (27th percentile of its peer group)",
+        "unusually low charge-to-payment ratio (3rd percentile of its peer group)",
+        "unusually high services per patient (97th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 40,
+      "score": 0.8944413065910339,
+      "trigger_year": 2021,
+      "specialty": "General Surgery",
+      "state": "OH",
+      "known_fraud": false,
+      "reasons": [
+        "unusually high services per patient (100th percentile of its peer group)",
+        "below typical distinct procedure codes billed (29th percentile of its peer group)",
+        "high Medicare allowed amount (85th percentile of its peer group)",
+        "unusually high payment per patient (97th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 41,
+      "score": 0.8940518498420715,
+      "trigger_year": 2019,
+      "specialty": "Psychologist, Clinical",
+      "state": "IL",
+      "known_fraud": false,
+      "reasons": [
+        "high average patient risk score (87th percentile of its peer group)",
+        "unusually high Medicare allowed amount (97th percentile of its peer group)",
+        "unusually low payment per service (1st percentile of its peer group)",
+        "unusually high services per patient (99th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 42,
+      "score": 0.8930409550666809,
+      "trigger_year": 2021,
+      "specialty": "Pain Management",
+      "state": "LA",
+      "known_fraud": false,
+      "reasons": [
+        "unusually low distinct procedure codes billed (2nd percentile of its peer group)",
+        "above typical services per patient (67th percentile of its peer group)",
+        "high Medicare allowed amount (81st percentile of its peer group)",
+        "unusually low charge-to-payment ratio (2nd percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 43,
+      "score": 0.8924947381019592,
+      "trigger_year": 2020,
+      "specialty": "Family Practice",
+      "state": "MI",
+      "known_fraud": false,
+      "reasons": [
+        "high services per patient (85th percentile of its peer group)",
+        "unusually high payment per patient (96th percentile of its peer group)",
+        "low charge-to-payment ratio (10th percentile of its peer group)",
+        "high Medicare allowed amount (85th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 44,
+      "score": 0.8923768401145935,
+      "trigger_year": 2020,
+      "specialty": "Pain Management",
+      "state": "IN",
+      "known_fraud": false,
+      "reasons": [
+        "above typical Medicare allowed amount (72nd percentile of its peer group)",
+        "above typical services per patient (75th percentile of its peer group)",
+        "above typical services (70th percentile of its peer group)",
+        "low charge-to-payment ratio (10th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 45,
+      "score": 0.8923569917678833,
+      "trigger_year": 2022,
+      "specialty": "Physician Assistant",
+      "state": "CA",
+      "known_fraud": false,
+      "reasons": [
+        "unusually high services per patient (98th percentile of its peer group)",
+        "unusually high Medicare allowed amount (100th percentile of its peer group)",
+        "unusually high payment per patient (100th percentile of its peer group)",
+        "unusually low charge-to-payment ratio (4th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 46,
+      "score": 0.8923445343971252,
+      "trigger_year": 2021,
+      "specialty": "Family Practice",
+      "state": "TX",
+      "known_fraud": false,
+      "reasons": [
+        "unusually high Medicare allowed amount (100th percentile of its peer group)",
+        "unusually high services per patient (98th percentile of its peer group)",
+        "unusually high distinct procedure codes billed (99th percentile of its peer group)",
+        "unusually high payment per patient (98th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 47,
+      "score": 0.8919575810432434,
+      "trigger_year": 2021,
+      "specialty": "Clinical Laboratory",
+      "state": "MS",
+      "known_fraud": false,
+      "reasons": [
+        "unusually high services per patient (98th percentile of its peer group)",
+        "unusually high average patient risk score (97th percentile of its peer group)",
+        "unusually low payment per service (1st percentile of its peer group)",
+        "above typical Medicare allowed amount (66th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 48,
+      "score": 0.8909827470779419,
+      "trigger_year": 2022,
+      "specialty": "Psychologist, Clinical",
+      "state": "IL",
+      "known_fraud": false,
+      "reasons": [
+        "unusually high services per patient (100th percentile of its peer group)",
+        "unusually high payment per patient (99th percentile of its peer group)",
+        "unusually high Medicare allowed amount (99th percentile of its peer group)",
+        "high average patient risk score (81st percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 49,
+      "score": 0.8908946514129639,
+      "trigger_year": 2022,
+      "specialty": "Family Practice",
+      "state": "MI",
+      "known_fraud": false,
+      "reasons": [
+        "high services per patient (92nd percentile of its peer group)",
+        "low payment per service (14th percentile of its peer group)",
+        "high average patient risk score (85th percentile of its peer group)",
+        "low charge-to-payment ratio (7th percentile of its peer group)"
+      ]
+    },
+    {
+      "rank": 50,
+      "score": 0.8886953592300415,
+      "trigger_year": 2020,
+      "specialty": "Family Practice",
+      "state": "AR",
+      "known_fraud": false,
+      "reasons": [
+        "unusually high Medicare allowed amount (100th percentile of its peer group)",
+        "high services per patient (91st percentile of its peer group)",
+        "unusually high Medicare payment (100th percentile of its peer group)",
+        "unusually high distinct procedure codes billed (100th percentile of its peer group)"
+      ]
+    }
+  ]
+}

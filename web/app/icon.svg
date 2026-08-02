@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="7" fill="#0b0b0b"/>
+  <!-- A ranked distribution with one bar pulled clear of the rest: the whole
+       site in one mark. -->
+  <rect x="7"  y="19" width="4" height="6"  rx="1.5" fill="#5598e7"/>
+  <rect x="13" y="16" width="4" height="9"  rx="1.5" fill="#5598e7"/>
+  <rect x="19" y="13" width="4" height="12" rx="1.5" fill="#5598e7"/>
+  <rect x="25" y="6"  width="4" height="19" rx="1.5" fill="#fcfcfb"/>
+</svg>

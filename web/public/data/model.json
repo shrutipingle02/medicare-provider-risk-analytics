@@ -1,0 +1,386 @@
+{
+ "model": "XGBoost",
+ "n_features": 46,
+ "note": "Importance and audit computed across the fold models that produced the published scores.",
+ "importance": [
+  {
+   "rank": 1,
+   "feature": "services_per_bene",
+   "label": "services per patient",
+   "mean_abs_shap": 0.43188562989234924,
+   "share": 0.07447319477796555
+  },
+  {
+   "rank": 2,
+   "feature": "bene_avg_age",
+   "label": "average patient age",
+   "mean_abs_shap": 0.39016324281692505,
+   "share": 0.06727869808673859
+  },
+  {
+   "rank": 3,
+   "feature": "charge_to_payment",
+   "label": "charge-to-payment ratio",
+   "mean_abs_shap": 0.3711877763271332,
+   "share": 0.06400661915540695
+  },
+  {
+   "rank": 4,
+   "feature": "tot_medicare_allowed",
+   "label": "Medicare allowed amount",
+   "mean_abs_shap": 0.2355465590953827,
+   "share": 0.04061701521277428
+  },
+  {
+   "rank": 5,
+   "feature": "tot_hcpcs_codes",
+   "label": "distinct procedure codes billed",
+   "mean_abs_shap": 0.21052324771881104,
+   "share": 0.03630206361413002
+  },
+  {
+   "rank": 6,
+   "feature": "services_per_bene_z",
+   "label": "services per patient (vs peers)",
+   "mean_abs_shap": 0.2069353312253952,
+   "share": 0.035683371126651764
+  },
+  {
+   "rank": 7,
+   "feature": "bene_avg_risk_score_pct",
+   "label": "average patient risk score (peer percentile)",
+   "mean_abs_shap": 0.20641538500785828,
+   "share": 0.03559371456503868
+  },
+  {
+   "rank": 8,
+   "feature": "tot_hcpcs_codes_z",
+   "label": "distinct procedure codes billed (vs peers)",
+   "mean_abs_shap": 0.20596887171268463,
+   "share": 0.03551671653985977
+  },
+  {
+   "rank": 9,
+   "feature": "tot_hcpcs_codes_pmr",
+   "label": "distinct procedure codes billed (vs peer median)",
+   "mean_abs_shap": 0.20543447136878967,
+   "share": 0.03542456775903702
+  },
+  {
+   "rank": 10,
+   "feature": "pay_per_service",
+   "label": "payment per service",
+   "mean_abs_shap": 0.1854911893606186,
+   "share": 0.03198559954762459
+  },
+  {
+   "rank": 11,
+   "feature": "tot_medicare_payment_z",
+   "label": "Medicare payment (vs peers)",
+   "mean_abs_shap": 0.18110038340091705,
+   "share": 0.031228462234139442
+  },
+  {
+   "rank": 12,
+   "feature": "pay_per_bene_z",
+   "label": "payment per patient (vs peers)",
+   "mean_abs_shap": 0.1621657758951187,
+   "share": 0.02796342968940735
+  },
+  {
+   "rank": 13,
+   "feature": "bene_avg_risk_score_pmr",
+   "label": "average patient risk score (vs peer median)",
+   "mean_abs_shap": 0.1429111212491989,
+   "share": 0.02464320883154869
+  },
+  {
+   "rank": 14,
+   "feature": "tot_medicare_allowed_pct",
+   "label": "Medicare allowed amount (peer percentile)",
+   "mean_abs_shap": 0.13775978982448578,
+   "share": 0.023754926398396492
+  },
+  {
+   "rank": 15,
+   "feature": "charge_to_payment_z",
+   "label": "charge-to-payment ratio (vs peers)",
+   "mean_abs_shap": 0.1268598586320877,
+   "share": 0.021875372156500816
+  },
+  {
+   "rank": 16,
+   "feature": "tot_beneficiaries_pmr",
+   "label": "patients (vs peer median)",
+   "mean_abs_shap": 0.11599911004304886,
+   "share": 0.0200025737285614
+  },
+  {
+   "rank": 17,
+   "feature": "tot_medicare_allowed_z",
+   "label": "Medicare allowed amount (vs peers)",
+   "mean_abs_shap": 0.11428065598011017,
+   "share": 0.019706249237060547
+  },
+  {
+   "rank": 18,
+   "feature": "pay_per_service_z",
+   "label": "payment per service (vs peers)",
+   "mean_abs_shap": 0.11074329912662506,
+   "share": 0.01909627579152584
+  },
+  {
+   "rank": 19,
+   "feature": "tot_medicare_payment_pmr",
+   "label": "Medicare payment (vs peer median)",
+   "mean_abs_shap": 0.10860567539930344,
+   "share": 0.01872766949236393
+  },
+  {
+   "rank": 20,
+   "feature": "charge_to_payment_pmr",
+   "label": "charge-to-payment ratio (vs peer median)",
+   "mean_abs_shap": 0.1085234209895134,
+   "share": 0.018713487312197685
+  },
+  {
+   "rank": 21,
+   "feature": "services_per_bene_pmr",
+   "label": "services per patient (vs peer median)",
+   "mean_abs_shap": 0.10432784259319305,
+   "share": 0.01799001172184944
+  },
+  {
+   "rank": 22,
+   "feature": "tot_services_z",
+   "label": "services (vs peers)",
+   "mean_abs_shap": 0.10318919271230698,
+   "share": 0.017793666571378708
+  },
+  {
+   "rank": 23,
+   "feature": "pay_per_bene",
+   "label": "payment per patient",
+   "mean_abs_shap": 0.09921770542860031,
+   "share": 0.01710883341729641
+  },
+  {
+   "rank": 24,
+   "feature": "charge_to_payment_pct",
+   "label": "charge-to-payment ratio (peer percentile)",
+   "mean_abs_shap": 0.09250733256340027,
+   "share": 0.015951715409755707
+  },
+  {
+   "rank": 25,
+   "feature": "tot_medicare_allowed_pmr",
+   "label": "Medicare allowed amount (vs peer median)",
+   "mean_abs_shap": 0.09059499949216843,
+   "share": 0.015621957369148731
+  },
+  {
+   "rank": 26,
+   "feature": "services_per_bene_pct",
+   "label": "services per patient (peer percentile)",
+   "mean_abs_shap": 0.08988596498966217,
+   "share": 0.015499693341553211
+  },
+  {
+   "rank": 27,
+   "feature": "pay_per_bene_pmr",
+   "label": "payment per patient (vs peer median)",
+   "mean_abs_shap": 0.08730176836252213,
+   "share": 0.015054081566631794
+  },
+  {
+   "rank": 28,
+   "feature": "tot_beneficiaries_z",
+   "label": "patients (vs peers)",
+   "mean_abs_shap": 0.08278577774763107,
+   "share": 0.014275356195867062
+  },
+  {
+   "rank": 29,
+   "feature": "pay_per_service_pmr",
+   "label": "payment per service (vs peer median)",
+   "mean_abs_shap": 0.08185835927724838,
+   "share": 0.01411543507128954
+  },
+  {
+   "rank": 30,
+   "feature": "tot_beneficiaries",
+   "label": "patients",
+   "mean_abs_shap": 0.08021394908428192,
+   "share": 0.013831877149641514
+  },
+  {
+   "rank": 31,
+   "feature": "tot_services",
+   "label": "services",
+   "mean_abs_shap": 0.07540769875049591,
+   "share": 0.013003100641071796
+  },
+  {
+   "rank": 32,
+   "feature": "tot_submitted_charge",
+   "label": "submitted charges",
+   "mean_abs_shap": 0.07240910083055496,
+   "share": 0.012486030347645283
+  },
+  {
+   "rank": 33,
+   "feature": "tot_beneficiaries_pct",
+   "label": "patients (peer percentile)",
+   "mean_abs_shap": 0.06739169359207153,
+   "share": 0.011620841920375824
+  },
+  {
+   "rank": 34,
+   "feature": "pay_per_bene_pct",
+   "label": "payment per patient (peer percentile)",
+   "mean_abs_shap": 0.06583096832036972,
+   "share": 0.011351714842021465
+  },
+  {
+   "rank": 35,
+   "feature": "bene_avg_risk_score_z",
+   "label": "average patient risk score (vs peers)",
+   "mean_abs_shap": 0.0654757097363472,
+   "share": 0.011290455237030983
+  },
+  {
+   "rank": 36,
+   "feature": "tot_medicare_payment",
+   "label": "Medicare payment",
+   "mean_abs_shap": 0.06297221034765244,
+   "share": 0.010858758352696896
+  },
+  {
+   "rank": 37,
+   "feature": "tot_submitted_charge_z",
+   "label": "submitted charges (vs peers)",
+   "mean_abs_shap": 0.05986437946557999,
+   "share": 0.010322852060198784
+  },
+  {
+   "rank": 38,
+   "feature": "ruca",
+   "label": "rural-urban location code",
+   "mean_abs_shap": 0.05960575118660927,
+   "share": 0.010278254747390747
+  },
+  {
+   "rank": 39,
+   "feature": "tot_hcpcs_codes_pct",
+   "label": "distinct procedure codes billed (peer percentile)",
+   "mean_abs_shap": 0.05920598283410072,
+   "share": 0.010209320113062859
+  },
+  {
+   "rank": 40,
+   "feature": "tot_medicare_payment_pct",
+   "label": "Medicare payment (peer percentile)",
+   "mean_abs_shap": 0.05348816514015198,
+   "share": 0.00922335498034954
+  },
+  {
+   "rank": 41,
+   "feature": "tot_services_pmr",
+   "label": "services (vs peer median)",
+   "mean_abs_shap": 0.05206263065338135,
+   "share": 0.008977539837360382
+  },
+  {
+   "rank": 42,
+   "feature": "tot_services_pct",
+   "label": "services (peer percentile)",
+   "mean_abs_shap": 0.05115269869565964,
+   "share": 0.00882063340395689
+  },
+  {
+   "rank": 43,
+   "feature": "pay_per_service_pct",
+   "label": "payment per service (peer percentile)",
+   "mean_abs_shap": 0.0509236603975296,
+   "share": 0.008781138807535172
+  },
+  {
+   "rank": 44,
+   "feature": "tot_medicare_standardized",
+   "label": "standardized Medicare payment",
+   "mean_abs_shap": 0.04582369700074196,
+   "share": 0.007901715114712715
+  },
+  {
+   "rank": 45,
+   "feature": "tot_submitted_charge_pct",
+   "label": "submitted charges (peer percentile)",
+   "mean_abs_shap": 0.045563265681266785,
+   "share": 0.007856806740164757
+  },
+  {
+   "rank": 46,
+   "feature": "tot_submitted_charge_pmr",
+   "label": "submitted charges (vs peer median)",
+   "mean_abs_shap": 0.04164803773164749,
+   "share": 0.007181675639003515
+  }
+ ],
+ "bias_audit": [
+  {
+   "feature": "bene_avg_age",
+   "label": "average patient age",
+   "concern": "patient age - flags a practice's patient mix, not its billing",
+   "rank": 2,
+   "share": 0.06727869808673859,
+   "value_vs_shap_spearman": -0.7902974563698207,
+   "mean_shap_top_decile": -0.4111649692058563,
+   "mean_shap_bottom_decile": 0.6833529472351074,
+   "flagged": true
+  },
+  {
+   "feature": "bene_avg_risk_score_pct",
+   "label": "average patient risk score (peer percentile)",
+   "concern": "CMS risk score - partly a coding-intensity measure already (expressed peer percentile)",
+   "rank": 7,
+   "share": 0.03559371456503868,
+   "value_vs_shap_spearman": 0.630440108597574,
+   "mean_shap_top_decile": -0.004996313247829676,
+   "mean_shap_bottom_decile": -0.5922635793685913,
+   "flagged": true
+  },
+  {
+   "feature": "bene_avg_risk_score_pmr",
+   "label": "average patient risk score (vs peer median)",
+   "concern": "CMS risk score - partly a coding-intensity measure already (expressed vs peer median)",
+   "rank": 13,
+   "share": 0.02464320883154869,
+   "value_vs_shap_spearman": 0.5233933477755753,
+   "mean_shap_top_decile": 0.1889602690935135,
+   "mean_shap_bottom_decile": -0.12961474061012268,
+   "flagged": false
+  },
+  {
+   "feature": "bene_avg_risk_score_z",
+   "label": "average patient risk score (vs peers)",
+   "concern": "CMS risk score - partly a coding-intensity measure already (expressed vs peers)",
+   "rank": 35,
+   "share": 0.011290455237030983,
+   "value_vs_shap_spearman": -0.25706623219316166,
+   "mean_shap_top_decile": -0.06849180907011032,
+   "mean_shap_bottom_decile": 0.04916159063577652,
+   "flagged": false
+  },
+  {
+   "feature": "ruca",
+   "label": "rural-urban location code",
+   "concern": "rural-urban location - a geography proxy",
+   "rank": 38,
+   "share": 0.010278254747390747,
+   "value_vs_shap_spearman": 0.333642944647808,
+   "mean_shap_top_decile": 0.07694770395755768,
+   "mean_shap_bottom_decile": -0.038063131272792816,
+   "flagged": false
+  }
+ ]
+}

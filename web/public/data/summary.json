@@ -1,0 +1,441 @@
+{
+ "generated": "2026-08-01",
+ "leie_snapshot": "2026-07-31",
+ "data": {
+  "provider_years": 7302541,
+  "providers": 1668394,
+  "years": [
+   2019,
+   2024
+  ],
+  "fraud_provider_years": 1379,
+  "fraud_providers": 486,
+  "prevalence_providers": 0.00029129809865055854,
+  "specialties": 113
+ },
+ "published_scores": {
+  "method": "5-fold grouped cross-validation",
+  "note": "Every provider was scored by a model trained without them. Scores are not a performance claim; see metrics.",
+  "ranking_year": 2024,
+  "ranking_note": "The worklist ranks 2024 billing only. The model scores earlier years systematically higher, so ranking across years would order providers partly by how old their billing is. Holding the year fixed removes that from the ordering.",
+  "providers_scored": 1668394,
+  "providers_ranked": 1296739,
+  "worklist_size": 5000
+ },
+ "states": [
+  {
+   "state": "AA",
+   "providers": 16,
+   "listed": 0,
+   "rate": null
+  },
+  {
+   "state": "AE",
+   "providers": 77,
+   "listed": 0,
+   "rate": null
+  },
+  {
+   "state": "AK",
+   "providers": 3203,
+   "listed": 6,
+   "rate": 0.0018732438339057135
+  },
+  {
+   "state": "AL",
+   "providers": 18266,
+   "listed": 81,
+   "rate": 0.004434468411255885
+  },
+  {
+   "state": "AP",
+   "providers": 66,
+   "listed": 0,
+   "rate": null
+  },
+  {
+   "state": "AR",
+   "providers": 11027,
+   "listed": 46,
+   "rate": 0.004171578851908951
+  },
+  {
+   "state": "AS",
+   "providers": 1,
+   "listed": 0,
+   "rate": null
+  },
+  {
+   "state": "AZ",
+   "providers": 26694,
+   "listed": 60,
+   "rate": 0.0022476961114857273
+  },
+  {
+   "state": "CA",
+   "providers": 105363,
+   "listed": 763,
+   "rate": 0.007241631312699904
+  },
+  {
+   "state": "CO",
+   "providers": 23031,
+   "listed": 75,
+   "rate": 0.003256480395988016
+  },
+  {
+   "state": "CT",
+   "providers": 18453,
+   "listed": 46,
+   "rate": 0.0024928195957296916
+  },
+  {
+   "state": "DC",
+   "providers": 4125,
+   "listed": 14,
+   "rate": 0.003393939393939394
+  },
+  {
+   "state": "DE",
+   "providers": 4931,
+   "listed": 20,
+   "rate": 0.004055972419387548
+  },
+  {
+   "state": "FL",
+   "providers": 85872,
+   "listed": 407,
+   "rate": 0.004739612446431898
+  },
+  {
+   "state": "FM",
+   "providers": 1,
+   "listed": 0,
+   "rate": null
+  },
+  {
+   "state": "GA",
+   "providers": 37050,
+   "listed": 117,
+   "rate": 0.003157894736842105
+  },
+  {
+   "state": "GU",
+   "providers": 224,
+   "listed": 1,
+   "rate": null
+  },
+  {
+   "state": "HI",
+   "providers": 4493,
+   "listed": 12,
+   "rate": 0.0026708212775428445
+  },
+  {
+   "state": "IA",
+   "providers": 12873,
+   "listed": 23,
+   "rate": 0.0017866853103394701
+  },
+  {
+   "state": "ID",
+   "providers": 7078,
+   "listed": 9,
+   "rate": 0.0012715456343599886
+  },
+  {
+   "state": "IL",
+   "providers": 51368,
+   "listed": 175,
+   "rate": 0.003406790219591964
+  },
+  {
+   "state": "IN",
+   "providers": 26454,
+   "listed": 96,
+   "rate": 0.0036289408029031526
+  },
+  {
+   "state": "KS",
+   "providers": 12403,
+   "listed": 46,
+   "rate": 0.0037087801338385874
+  },
+  {
+   "state": "KY",
+   "providers": 19236,
+   "listed": 65,
+   "rate": 0.0033790808899979204
+  },
+  {
+   "state": "LA",
+   "providers": 17695,
+   "listed": 74,
+   "rate": 0.00418197230856174
+  },
+  {
+   "state": "MA",
+   "providers": 38948,
+   "listed": 120,
+   "rate": 0.003081031118414296
+  },
+  {
+   "state": "MD",
+   "providers": 26679,
+   "listed": 117,
+   "rate": 0.00438547171932981
+  },
+  {
+   "state": "ME",
+   "providers": 7250,
+   "listed": 10,
+   "rate": 0.001379310344827586
+  },
+  {
+   "state": "MI",
+   "providers": 43221,
+   "listed": 213,
+   "rate": 0.004928159922260013
+  },
+  {
+   "state": "MN",
+   "providers": 29299,
+   "listed": 86,
+   "rate": 0.0029352537629270623
+  },
+  {
+   "state": "MO",
+   "providers": 25211,
+   "listed": 69,
+   "rate": 0.0027369005592796794
+  },
+  {
+   "state": "MP",
+   "providers": 35,
+   "listed": 0,
+   "rate": null
+  },
+  {
+   "state": "MS",
+   "providers": 10080,
+   "listed": 43,
+   "rate": 0.0042658730158730155
+  },
+  {
+   "state": "MT",
+   "providers": 5020,
+   "listed": 10,
+   "rate": 0.00199203187250996
+  },
+  {
+   "state": "NC",
+   "providers": 44655,
+   "listed": 141,
+   "rate": 0.0031575411488075243
+  },
+  {
+   "state": "ND",
+   "providers": 4198,
+   "listed": 7,
+   "rate": 0.0016674606955693187
+  },
+  {
+   "state": "NE",
+   "providers": 9069,
+   "listed": 19,
+   "rate": 0.0020950490682544935
+  },
+  {
+   "state": "NH",
+   "providers": 7464,
+   "listed": 6,
+   "rate": 0.0008038585209003215
+  },
+  {
+   "state": "NJ",
+   "providers": 39694,
+   "listed": 161,
+   "rate": 0.004056028618934852
+  },
+  {
+   "state": "NM",
+   "providers": 6930,
+   "listed": 8,
+   "rate": 0.0011544011544011544
+  },
+  {
+   "state": "NV",
+   "providers": 9654,
+   "listed": 69,
+   "rate": 0.007147296457426973
+  },
+  {
+   "state": "NY",
+   "providers": 88642,
+   "listed": 404,
+   "rate": 0.004557658897588051
+  },
+  {
+   "state": "OH",
+   "providers": 52310,
+   "listed": 114,
+   "rate": 0.002179315618428599
+  },
+  {
+   "state": "OK",
+   "providers": 13862,
+   "listed": 64,
+   "rate": 0.004616938392728322
+  },
+  {
+   "state": "OR",
+   "providers": 16156,
+   "listed": 24,
+   "rate": 0.0014855162168853676
+  },
+  {
+   "state": "PA",
+   "providers": 63361,
+   "listed": 177,
+   "rate": 0.002793516516469121
+  },
+  {
+   "state": "PR",
+   "providers": 4115,
+   "listed": 171,
+   "rate": 0.041555285540704735
+  },
+  {
+   "state": "RI",
+   "providers": 5376,
+   "listed": 0,
+   "rate": 0.0
+  },
+  {
+   "state": "SC",
+   "providers": 20884,
+   "listed": 32,
+   "rate": 0.0015322735108216816
+  },
+  {
+   "state": "SD",
+   "providers": 4725,
+   "listed": 6,
+   "rate": 0.0012698412698412698
+  },
+  {
+   "state": "TN",
+   "providers": 30048,
+   "listed": 79,
+   "rate": 0.0026291267305644304
+  },
+  {
+   "state": "TX",
+   "providers": 86803,
+   "listed": 446,
+   "rate": 0.0051380712648180366
+  },
+  {
+   "state": "UT",
+   "providers": 10697,
+   "listed": 36,
+   "rate": 0.003365429559689633
+  },
+  {
+   "state": "VA",
+   "providers": 32889,
+   "listed": 57,
+   "rate": 0.0017331022530329288
+  },
+  {
+   "state": "VI",
+   "providers": 171,
+   "listed": 0,
+   "rate": null
+  },
+  {
+   "state": "VT",
+   "providers": 3106,
+   "listed": 5,
+   "rate": 0.0016097875080489374
+  },
+  {
+   "state": "WA",
+   "providers": 29103,
+   "listed": 45,
+   "rate": 0.001546232347180703
+  },
+  {
+   "state": "WI",
+   "providers": 26902,
+   "listed": 59,
+   "rate": 0.002193145491041558
+  },
+  {
+   "state": "WV",
+   "providers": 7733,
+   "listed": 25,
+   "rate": 0.003232897969740075
+  },
+  {
+   "state": "WY",
+   "providers": 2339,
+   "listed": 4,
+   "rate": 0.0017101325352714834
+  },
+  {
+   "state": "XX",
+   "providers": 27,
+   "listed": 0,
+   "rate": null
+  },
+  {
+   "state": "ZZ",
+   "providers": 83,
+   "listed": 0,
+   "rate": null
+  }
+ ],
+ "states_note": "`rate` is the share of a state's 2024 providers that reach the top 5,000. Use the rate, not `listed`: a big state lists more providers because it has more providers. States with fewer than 500 ranked providers carry a null rate, being too small to colour confidently.",
+ "metrics": {
+  "note": "From the locked ten-seed protocol, not from the scoring run. Provider level, which is the unit the worklist ranks.",
+  "seeds": [
+   42,
+   1,
+   7,
+   13,
+   99,
+   2,
+   5,
+   11,
+   23,
+   77
+  ],
+  "roc_auc": [
+   0.8009,
+   0.0128
+  ],
+  "recall_at_1pct": [
+   0.1677,
+   0.0267
+  ],
+  "recall_at_5pct": [
+   0.3752,
+   0.0319
+  ],
+  "recall_at_1pct_range": [
+   0.1172,
+   0.2185
+  ],
+  "precision_at_1pct": 0.0048
+ },
+ "caveats": [
+  "A positive label does not mean a provider committed fraud. It means they were caught, excluded by the OIG, and recorded with a usable NPI.",
+  "Most real fraud is unlabeled and sits in this data as clean, so precision here is a floor rather than the truth.",
+  "Report the range across splits, not the point estimate: only about 120 labeled fraud providers exist per test split.",
+  "Splits are random, not forward in time. A real deployment predicting the next year would score lower.",
+  "2024 labels are the least complete, because investigations take years.",
+  "The model uses patient risk score relative to specialty peers.",
+  "No provider on this list is accused of anything. A high rank means the billing pattern is unusual for the specialty, nothing more."
+ ]
+}
