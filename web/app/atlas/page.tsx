@@ -1,18 +1,25 @@
 import type { Metadata } from "next";
-import Map, { type Bin } from "./map";
+import Dashboard, { type Atlas, type TopProvider } from "./dashboard";
+import type { Bin } from "./map";
 import geo from "@/lib/us-states.json";
-import { getSummary, num, pct, type StateStat } from "@/lib/data";
+import { getProviders, getSummary, type StateStat } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "By state — Medicare Provider Risk Analytics",
+  title: "The atlas — Medicare Provider Risk Analytics",
   description:
     "Where the worklist concentrates geographically, as a share of each state's providers rather than a raw count.",
 };
 
 const BIN_COUNT = 5;
+const HIST_BINS = 10;
+const TOP_SPECIALTIES = 7;
+const TOP_PROVIDERS = 8;
 
-export default async function Atlas() {
-  const summary = await getSummary();
+export default async function AtlasPage() {
+  const [summary, providers] = await Promise.all([
+    getSummary(),
+    getProviders(),
+  ]);
   const year = summary.published_scores.ranking_year;
 
   const stats: Record<string, StateStat> = Object.fromEntries(
@@ -21,8 +28,8 @@ export default async function Atlas() {
 
   /* Bin over the states the map can actually draw. Including Puerto Rico here
      would stretch the scale far enough to flatten every mainland difference —
-     it is four times the next highest rate and albersUsa cannot place it, so it
-     is reported in the table instead. */
+     it is four times the next highest rate and albersUsa cannot place it, so
+     it is left to the ranked list instead. */
   const drawable = geo.shapes
     .map((s) => stats[s.code]?.rate)
     .filter((r): r is number => typeof r === "number");
@@ -34,112 +41,69 @@ export default async function Atlas() {
     to: i === BIN_COUNT - 1 ? hi : lo + width * (i + 1),
   }));
 
-  const offMap = summary.states
-    .filter((s) => s.rate !== null && !geo.shapes.some((g) => g.code === s.state))
-    .sort((a, b) => (b.rate ?? 0) - (a.rate ?? 0));
+  /* The ranked list carries every state with a rate, including the ones the
+     projection cannot draw. Ranking by rate, not by count: a big state lists
+     more providers because it has more providers. */
+  const ranked = summary.states
+    .filter((s) => s.rate !== null)
+    .sort((a, b) => (b.rate as number) - (a.rate as number));
 
-  const table = [...summary.states].sort((a, b) => {
-    if (a.rate === null && b.rate === null) return a.state.localeCompare(b.state);
-    if (a.rate === null) return 1;
-    if (b.rate === null) return -1;
-    return b.rate - a.rate;
-  });
+  const tally = <T extends string>(values: T[]) => {
+    const m = new Map<T, number>();
+    for (const v of values) m.set(v, (m.get(v) ?? 0) + 1);
+    return m;
+  };
 
-  return (
-    <div className="mx-auto w-full max-w-5xl px-5 py-20 space-y-28">
-      <header>
-        <h1>
-          Where the worklist concentrates
-        </h1>
-        <p className="mt-3 max-w-2xl text-[var(--ink-secondary)]">
-          The share of each state&apos;s {year} Medicare providers that reach the
-          top {num(summary.published_scores.worklist_size)}. This is a rate, not
-          a count &mdash; California lists the most providers simply because
-          California has the most providers.
-        </p>
-      </header>
+  const bySpecialty = [...tally(providers.map((p) => p.specialty))]
+    .map(([specialty, count]) => ({ specialty, count }))
+    .sort((a, b) => b.count - a.count)
+    .slice(0, TOP_SPECIALTIES);
 
-      {/* geo is used here only to work out the bins and which states the
-          projection can draw; the map imports the geometry itself. */}
-      <Map stats={stats} bins={bins} year={year} />
+  /* Fixed 0–1 bins rather than min–max. The published list only reaches down
+     to about 0.28, and stretching the axis to fit that would hide the fact
+     that every provider on it scores high. */
+  const scoreHist = Array.from({ length: HIST_BINS }, () => 0);
+  for (const p of providers) {
+    const i = Math.min(HIST_BINS - 1, Math.floor(p.score * HIST_BINS));
+    scoreHist[i] += 1;
+  }
 
-      {offMap.length > 0 && (
-        <section className="rounded-xl border border-[var(--hairline)] bg-[var(--surface)] p-7">
-          <h2 className="text-base">Not on the map</h2>
-          <p className="mt-2 text-sm text-[var(--ink-secondary)]">
-            The projection used here insets Alaska and Hawaii but has no place
-            for the territories. They are not omitted from the analysis, and one
-            of them is the highest rate anywhere:{" "}
-            {offMap.map((s, i) => (
-              <span key={s.state}>
-                {i > 0 && ", "}
-                <strong className="font-medium text-[var(--ink-primary)]">
-                  {s.state} at {pct(s.rate as number, 2)}
-                </strong>{" "}
-                ({num(s.listed)} of {num(s.providers)})
-              </span>
-            ))}
-            . Read it with the same caution as any other single figure here.
-          </p>
-        </section>
-      )}
+  const topSpecialtyByState: Record<string, string> = {};
+  for (const s of summary.states) {
+    const inState = providers.filter((p) => p.state === s.state);
+    if (inState.length === 0) continue;
+    const [top] = [...tally(inState.map((p) => p.specialty))].sort(
+      (a, b) => b[1] - a[1],
+    );
+    if (top) topSpecialtyByState[s.state] = top[0];
+  }
 
-      <section>
-        <h2>Every state</h2>
-        <p className="mt-2 text-sm text-[var(--ink-secondary)]">
-          {summary.states_note}
-        </p>
-        <div className="mt-4 overflow-x-auto">
-          <table className="w-full min-w-md border-collapse text-sm">
-            <caption className="sr-only">
-              Worklist rate by state, highest first
-            </caption>
-            <thead>
-              <tr className="text-left text-[var(--ink-muted)]">
-                <th scope="col" className="py-2 pr-4 font-normal">
-                  State
-                </th>
-                <th scope="col" className="py-2 pr-4 text-right font-normal">
-                  Providers
-                </th>
-                <th scope="col" className="py-2 pr-4 text-right font-normal">
-                  On the worklist
-                </th>
-                <th scope="col" className="py-2 text-right font-normal">
-                  Rate
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {table.map((s) => (
-                <tr key={s.state} className="border-t border-[var(--gridline)]">
-                  <td className="py-2 pr-4">{s.state}</td>
-                  <td className="py-2 pr-4 text-right tnum">
-                    {num(s.providers)}
-                  </td>
-                  <td className="py-2 pr-4 text-right tnum">{num(s.listed)}</td>
-                  <td className="py-2 text-right tnum">
-                    {s.rate === null ? (
-                      <span className="text-[var(--ink-muted)]">
-                        too few
-                      </span>
-                    ) : (
-                      pct(s.rate, 2)
-                    )}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
+  const topProviders: TopProvider[] = providers
+    .slice(0, TOP_PROVIDERS)
+    .map((p) => ({
+      rank: p.rank,
+      specialty: p.specialty,
+      state: p.state,
+      score: p.score,
+      known_exclusion: p.known_exclusion,
+    }));
 
-      <p className="max-w-2xl text-sm text-[var(--ink-secondary)]">
-        A darker state does not mean more fraud there. It means more of its
-        providers bill unusually for their specialty, and specialty mix varies
-        by state &mdash; a state weighted toward the specialties this model
-        flags will rank higher whatever its providers are doing.
-      </p>
-    </div>
-  );
+  const atlas: Atlas = {
+    year,
+    bins,
+    stats,
+    ranked,
+    bySpecialty,
+    scoreHist,
+    topSpecialtyByState,
+    topProviders,
+    kpis: {
+      listed: summary.published_scores.worklist_size,
+      known: providers.filter((p) => p.known_exclusion).length,
+      states: summary.states.length,
+      specialties: summary.data.specialties,
+    },
+  };
+
+  return <Dashboard atlas={atlas} />;
 }

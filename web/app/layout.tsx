@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import "./globals.css";
+import SiteNav from "@/components/site-nav";
 import { getSummary } from "@/lib/data";
 import { Geist, Newsreader } from "next/font/google";
 import { cn } from "@/lib/utils";
@@ -21,13 +21,6 @@ export const metadata: Metadata = {
     "A ranked, explained view of unusual Medicare Part B billing. Every flag states its reason against the provider's specialty peers.",
 };
 
-const NAV = [
-  { href: "/", label: "Worklist" },
-  { href: "/atlas", label: "By state" },
-  { href: "/how-it-works", label: "How it works" },
-  { href: "/method", label: "Method & limits" },
-];
-
 export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -36,24 +29,7 @@ export default async function RootLayout({
   return (
     <html lang="en" className={cn("h-full antialiased", "font-sans", geist.variable, display.variable)}>
       <body className="min-h-full flex flex-col">
-        <header className="border-b border-[var(--hairline)] bg-[var(--surface)]">
-          <div className="mx-auto w-full max-w-5xl px-5 py-4 flex flex-wrap items-center gap-x-6 gap-y-3">
-            <Link href="/" className="font-semibold tracking-tight">
-              Medicare Provider Risk
-            </Link>
-            <nav className="flex gap-5 text-sm">
-              {NAV.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="text-[var(--ink-secondary)] hover:text-[var(--ink-primary)] transition-colors"
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
-          </div>
-        </header>
+        <SiteNav />
 
         <main className="flex-1">{children}</main>
 

@@ -159,6 +159,39 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
+/* Cursor-tracked spotlight on the story cards. --mx/--my are written by the
+   Panel's pointer handler; the fallback centres the glow so a card that has
+   never been hovered still looks deliberate. Kept faint: it is a hint that the
+   surface is live, not a light source. */
+.spotlight-card {
+  position: relative;
+}
+
+.spotlight-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    220px circle at var(--mx, 50%) var(--my, 0%),
+    rgba(143, 208, 255, 0.07),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spotlight-card::before {
+    transition: none;
+  }
+}
+
 
 @layer base {
   * {
